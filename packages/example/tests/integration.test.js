@@ -28,7 +28,7 @@ it("should display hover tips over highlights", async () => {
   await page.hover(".Highlight .Highlight__part", {
     visible: true
   });
-  await page.waitForSelector(".PdfHighlighter__tip-container", {
+  await page.waitForSelector("#PdfHighlighter__tip-container", {
     visible: true
   });
   await expect(page).toMatch("Flow or TypeScript?");
@@ -37,7 +37,7 @@ it("should display hover tips over highlights", async () => {
 it("should highlight text", async () => {
   await waitForHighlights();
   await highlight({ x: 400, y: 300 }, { x: 500, y: 300 });
-  await page.waitForSelector(".PdfHighlighter__tip-container", {
+  await page.waitForSelector("#PdfHighlighter__tip-container", {
     visible: true
   });
 });

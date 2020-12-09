@@ -4,7 +4,7 @@ import React, { Component } from "react";
 
 import { Rnd } from "react-rnd";
 
-import "../style/AreaHighlight.css";
+import styles from "../style/AreaHighlight.module.css";
 
 import type { T_ViewportHighlight, T_LTWH } from "../types";
 
@@ -19,7 +19,7 @@ class AreaHighlight extends Component<Props> {
 
     return (
       <Rnd
-        className="AreaHighlight"
+        className={styles.root}
         onDragStop={(_, data) => {
           const boundingRect = {
             ...highlight.position.boundingRect,

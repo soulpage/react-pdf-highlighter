@@ -35,10 +35,11 @@ export const getPageFromRange = (range: Range) => {
 
 export const findOrCreateContainerLayer = (
   container: HTMLElement,
-  className: string
+  className: string,
+  selector?: string,
 ) => {
   const doc = getDocument(container);
-  let layer = container.querySelector(`.${className}`);
+  let layer = container.querySelector(selector ? selector : `.${className}`);
 
   if (!layer) {
     layer = doc.createElement("div");

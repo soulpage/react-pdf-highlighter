@@ -4,6 +4,8 @@ import React, { Component } from "react";
 
 import type { T_LTWH } from "../types";
 
+import styles from "../style/TipContainer.module.css";
+
 type State = {
   height: number,
   width: number
@@ -83,7 +85,8 @@ class TipContainer extends Component<Props, State> {
 
     return (
       <div
-        className="PdfHighlighter__tip-container"
+        id="PdfHighlighter__tip-container"
+        className={styles.root}
         style={{
           visibility: isStyleCalculationInProgress ? "hidden" : "visible",
           top,

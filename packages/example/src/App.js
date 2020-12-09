@@ -25,6 +25,7 @@ import type {
 } from "react-pdf-highlighter/src/types";
 
 import "./style/App.css";
+import "react-pdf-highlighter/build/styles.css";
 
 setPdfWorker(PDFWorker);
 

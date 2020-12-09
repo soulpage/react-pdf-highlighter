@@ -2,7 +2,7 @@
 
 import React, { Component } from "react";
 
-import "../style/Tip.css";
+import styles from "../style/Tip.module.css";
 
 type State = {
   compact: boolean,
@@ -40,7 +40,7 @@ class Tip extends Component<Props, State> {
       <div className="Tip">
         {compact ? (
           <div
-            className="Tip__compact"
+            className={styles.compact}
             onClick={() => {
               onOpen();
               this.setState({ compact: false });
@@ -50,7 +50,7 @@ class Tip extends Component<Props, State> {
           </div>
         ) : (
           <form
-            className="Tip__card"
+            className={styles.card}
             onSubmit={event => {
               event.preventDefault();
               onConfirm({ text, emoji });

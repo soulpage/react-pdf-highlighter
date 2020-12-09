@@ -2,7 +2,7 @@
 
 import React, { Component } from "react";
 
-import "../style/Highlight.css";
+import styles from "../style/Highlight.module.css";
 
 import type { T_LTWH } from "../types.js";
 
@@ -36,11 +36,11 @@ class Highlight extends Component<Props> {
 
     return (
       <div
-        className={`Highlight ${isScrolledTo ? "Highlight--scrolledTo" : ""}`}
+        className={`Highlight ${styles.root} ${isScrolledTo ? styles.scrolledTo : ""}`}
       >
         {comment ? (
           <div
-            className="Highlight__emoji"
+            className={`Highlight__emoji ${styles.emoji}`}
             style={{
               left: 20,
               top: boundingRect.top
@@ -49,7 +49,7 @@ class Highlight extends Component<Props> {
             {comment.emoji}
           </div>
         ) : null}
-        <div className="Highlight__parts">
+        <div className={styles.parts}>
           {rects.map((rect, index) => (
             <div
               onMouseOver={onMouseOver}
@@ -57,7 +57,7 @@ class Highlight extends Component<Props> {
               onClick={onClick}
               key={index}
               style={rect}
-              className={`Highlight__part`}
+              className={`Highlight__part ${styles.part}`}
             />
           ))}
         </div>

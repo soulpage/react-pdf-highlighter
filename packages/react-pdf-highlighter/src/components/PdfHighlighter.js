@@ -10,7 +10,7 @@ import { EventBus, PDFViewer, PDFLinkService } from "pdfjs-dist/web/pdf_viewer";
 import "pdfjs-dist/web/pdf_viewer.css";
 import "../style/pdf_viewer.css";
 
-import "../style/PdfHighlighter.css";
+import styles from "../style/PdfHighlighter.module.css";
 
 import getBoundingRect from "../lib/get-bounding-rect";
 import getClientRects from "../lib/get-client-rects";
@@ -194,7 +194,8 @@ class PdfHighlighter<T_HT: T_Highlight> extends PureComponent<
 
     return findOrCreateContainerLayer(
       textLayer.textLayerDiv,
-      "PdfHighlighter__highlight-layer"
+      `PdfHighlighter__highlight-layer ${styles.highlightLayer}`,
+      ".PdfHighlighter__highlight-layer"
     );
   }
 
@@ -463,7 +464,7 @@ class PdfHighlighter<T_HT: T_Highlight> extends PureComponent<
       return;
     }
 
-    if (asElement(event.target).closest(".PdfHighlighter__tip-container")) {
+    if (asElement(event.target).closest("#PdfHighlighter__tip-container")) {
       return;
     }
 
@@ -527,7 +528,7 @@ class PdfHighlighter<T_HT: T_Highlight> extends PureComponent<
 
   toggleTextSelection(flag: boolean) {
     this.viewer.viewer.classList.toggle(
-      "PdfHighlighter--disable-selection",
+      styles.disableSelection,
       flag
     );
   }
@@ -547,7 +548,7 @@ class PdfHighlighter<T_HT: T_Highlight> extends PureComponent<
       <Pointable onPointerDown={this.onMouseDown}>
         <div
           ref={this.attachRef}
-          className="PdfHighlighter"
+          className={styles.root}
           onContextMenu={e => e.preventDefault()}
         >
           <div className="pdfViewer" />
