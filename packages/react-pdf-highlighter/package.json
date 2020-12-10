@@ -1,6 +1,6 @@
 {
   "name": "react-pdf-highlighter",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "description": "Set of React components for PDF annotation",
   "main": "build/index.js",
   "scripts": {
@@ -25,6 +25,7 @@
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.10.5",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
     "@babel/preset-flow": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "babel-plugin-css-modules-transform": "^1.6.2",
@@ -45,13 +46,5 @@
   "files": [
     "build",
     "src"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/agentcooper/react-pdf-highlighter.git"
-  },
-  "bugs": {
-    "url": "https://github.com/agentcooper/react-pdf-highlighter/issues"
-  },
-  "homepage": "https://github.com/agentcooper/react-pdf-highlighter#readme"
+  ]
 }

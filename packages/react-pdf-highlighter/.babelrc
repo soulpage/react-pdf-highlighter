@@ -10,6 +10,7 @@
       {
         "extractCss": "./build/styles.css"
       }
-    ]
+    ],
+    "@babel/plugin-transform-modules-commonjs"
   ]
 }
